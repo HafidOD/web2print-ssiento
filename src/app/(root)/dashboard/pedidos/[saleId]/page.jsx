@@ -63,17 +63,17 @@ export default async function SingleSale({ params }) {
               )}
             </ul>
             <div className="pt-2 border-t-2 border-t-gray-200">
-              <p className="text-end">
+              {/* <p className="text-end">
                 Total: ${sale.totalSale} {currency}
-              </p>
+              </p> */}
             </div>
           </div>
-          <div className="p-6 mx-2 align-middle bg-white rounded-lg shadow-lg md:w-2/5">
+          {/* <div className="p-6 mx-2 align-middle bg-white rounded-lg shadow-lg md:w-2/5">
             <h2 className="mb-4 text-xl font-semibold text-center text-primaryBlue">
               {lang.addresses["shipping-address"]}
             </h2>
             <AddressSale address={address} lang={lang}></AddressSale>
-          </div>
+          </div> */}
         </div>
         {/* <div className="w-full px-2 py-5 m-auto space-y-5 md:w-5/5 sm:px-0"> */}
         <div className="w-full px-2 py-5 m-auto space-y-5 md:w-1/5 sm:px-0">

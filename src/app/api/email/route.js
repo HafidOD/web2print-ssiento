@@ -20,7 +20,7 @@ export async function POST(req) {
       return total + item.total;
     }, 0);
     // console.log(totalSale);
-    const totalFinal = totalSale + items.address.price;
+    const totalFinal = totalSale;
     // console.log(totalFinal);
     // console.log(items.items[0].enterpriseId);
 
@@ -217,45 +217,18 @@ function generateEmailContent(
   content += `<table style="width: 100%; border-collapse: collapse">
       <tbody>
         <tr>
-          <td style="width: 15%; border: solid 1px; padding: 8px">${
-            lang.pdf.hotel
-          }:</td>
+          <td style="width: 15%; border: solid 1px; padding: 8px">${lang.pdf.hotel}:</td>
           <td style="width: 60%; border: solid 1px; padding: 8px">
             ${items.user.property}
           </td>
-          <td style="width: 10%; border: solid 1px; padding: 8px">${
-            lang.pdf.location
-          }</td>
-          <td style="width: 15%; border: solid 1px; padding: 8px">${
-            items.user.typePrice === 1
-              ? "QROO"
-              : items.user.typePrice === 2
-              ? "NAL"
-              : items.user.typePrice === 3
-              ? "EXW"
-              : ""
-          }</td>
+          <td style="width: 10%; border: solid 1px; padding: 8px">${lang.pdf.location}</td>
+          <td style="width: 15%; border: solid 1px; padding: 8px">NAL</td>
 
         </tr>
       </tbody>
     </table>`;
   content += `<p>${lang.pdf.shipping}</p>`;
-  content += `<table style="width: 100%; border-collapse: collapse">
-      <tbody>
-        <tr>
-          <td style="width: 15%; border: solid 1px; padding: 8px">
-            ${lang.pdf.address}:
-          </td>
-          <td style="width: 85%; border: solid 1px; padding: 8px">${
-            items.address.officeName
-          }: ${items.address.address} ${
-    items.address.city ? items.address.city : ""
-  } ${items.address.country ? items.address.country : ""} ${
-    items.address.state ? items.address.state : ""
-  } ${items.address.postalCode ? items.address.postalCode : ""}</td>
-        </tr>
-      </tbody>
-    </table>
+  content += `
     <table style="width: 100%; border-collapse: collapse">
       <tbody>
         <tr>
@@ -263,7 +236,6 @@ function generateEmailContent(
             style="
               width: 15%;
               border: solid 1px;
-              border-top: none;
               padding: 8px;
             "
           >
@@ -388,49 +360,6 @@ function generateEmailContent(
       : "";
 
   content += `</tbody></table><br />
-    <table style="width: 100%; border-collapse: collapse">
-      <tbody>
-        <tr>
-          <td style="width: 70%; border: solid 1px; padding: 8px">
-            ${lang.pdf["amounts-expressed"]} ${
-    items.user.typePrice === 3 ? lang.pdf.dollars : lang.pdf["mexican-pesos"]
-  }<br />
-            
-          </td>
-          <td style="width: 10%; border: none; padding: 8px"></td>
-          <td style="width: 20%; border: none; padding: 0">
-            <table style="width: 100%; border-collapse: collapse">
-              <tbody>
-                <tr>
-                  <td style="width: 50%; border: solid 1px; padding: 8px">
-                    Sub total:
-                  </td>
-                  <td style="width: 50%; border: solid 1px; padding: 8px">
-                    $${subtotal}
-                  </td>
-                </tr>
-                <tr>
-                  <td style="width: 50%; border: solid 1px; padding: 8px">
-                    IVA
-                  </td>
-                  <td style="width: 50%; border: solid 1px; padding: 8px">
-                    $${montoIVA}
-                  </td>
-                </tr>
-                <tr>
-                  <td style="width: 50%; border: solid 1px; padding: 8px">
-                    Total
-                  </td>
-                  <td style="width: 50%; border: solid 1px; padding: 8px">
-                    $${totalSale}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
     <br />`;
 
   content += `<br /><br /><br /><a href='${process.env.NEXT_URL_BASE}/sale/${saleId}' style='text-decoration: none; background-color: #193761; color: white; padding: 10px; border-radius: 8px;'>${lang.order["download-pdf"]}</a><br /><br /><br />`;

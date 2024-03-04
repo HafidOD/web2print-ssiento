@@ -21,7 +21,7 @@ export default async function SalesList({ sale, address, paramslang }) {
   // console.log(items.items.length);
   return (
     <li className="py-3">
-      <Link href={`/${paramslang}/dashboard/pedidos/${sale.id}`}>
+      <Link href={`/dashboard/pedidos/${sale.id}`}>
         <div className="md:grid md:grid-cols-6">
           <div className="flex items-center justify-center col-span-1">
             <div className="">
@@ -38,12 +38,12 @@ export default async function SalesList({ sale, address, paramslang }) {
             </div>
           </div>
           <div className="col-span-3 p-2">
-            <p className="text-xs text-center md:text-start">
+            {/* <p className="text-xs text-center md:text-start">
               {lang.addresses.address}
             </p>
             <p className="text-sm font-semibold leading-6 text-center text-primaryBlue md:text-start">
               {address.officeName}
-            </p>
+            </p> */}
           </div>
           <div className="flex items-center col-span-2 justify-evenly">
             <div className="p-2">

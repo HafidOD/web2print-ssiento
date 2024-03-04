@@ -485,11 +485,7 @@ const SalePdf = ({ sale, items, address, lang }) => {
             <View style={styles.tableColHeader10}>
               <Text>{lang.pdf.location}:</Text>
             </View>
-            <View style={styles.tableColHeader10}>
-              {sale.user.typePrice == 1 && <Text>QROO</Text>}
-              {sale.user.typePrice == 2 && <Text>NAL</Text>}
-              {sale.user.typePrice == 3 && <Text>EXW</Text>}
-            </View>
+            <View style={styles.tableColHeader10}>NAL</View>
           </View>
         </View>
         <Text style={styles.parrafo}>{lang.pdf.shipping}:</Text>
@@ -498,7 +494,7 @@ const SalePdf = ({ sale, items, address, lang }) => {
             <View style={styles.tableColHeader15}>
               <Text>{lang.pdf.address}:</Text>
             </View>
-            <View style={styles.tableColHeader85}>
+            {/* <View style={styles.tableColHeader85}>
               {address.city &&
               address.state &&
               address.country &&
@@ -512,7 +508,7 @@ const SalePdf = ({ sale, items, address, lang }) => {
                   {address.officeName}: {address.address}
                 </Text>
               )}
-            </View>
+            </View> */}
           </View>
           <View style={styles.tableRow}>
             <View style={styles.tableColHeader15}>
@@ -617,7 +613,7 @@ const SalePdf = ({ sale, items, address, lang }) => {
           )}
         </View>
         <Text>{"\n"}</Text>
-        <View style={styles.tabletotal}>
+        {/* <View style={styles.tabletotal}>
           <View style={styles.tableRow}>
             <View style={styles.tableColHeader70}>
               <Text>
@@ -662,7 +658,7 @@ const SalePdf = ({ sale, items, address, lang }) => {
               </View>
             </View>
           </View>
-        </View>
+        </View> */}
         <View style={styles.footer}>
           <View style={styles.tabletotal}>
             <View style={styles.tableHeaderRow}>

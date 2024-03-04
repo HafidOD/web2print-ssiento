@@ -52,7 +52,7 @@ export default function ProductCard({
     }
   };
   // console.log(product[prices[typePrice]]);
-
+  // console.log(product.descriptionProduct);
   return (
     <div className="flex items-center justify-between w-full p-2 my-3 bg-white rounded-lg shadow-xl">
       <div className="flex items-center">
@@ -73,17 +73,19 @@ export default function ProductCard({
             {product.nameProduct}
           </h4>
           <div>
-            <p className="text-xs leading-normal text-secondGray md:text-sm">
-              {product.descriptionProduct}
-            </p>
+            {product.descriptionProduct && (
+              <p className="text-xs leading-normal text-secondGray md:text-sm">
+                {product.descriptionProduct}
+              </p>
+            )}
             {priceProduct != 0 && (
               <p className="text-xs leading-normal text-secondGray md:text-sm">
                 ${priceProduct} {currency}
               </p>
             )}
-            <p className="text-xs leading-normal text-secondGray md:text-sm">
+            {/* <p className="text-xs leading-normal text-secondGray md:text-sm">
               Stock: {product.stockProduct}
-            </p>
+            </p> */}
             <p className="text-xs leading-normal text-secondGray md:text-xs">
               {product.unitsPackage} {paramslang.products["pieces-unit"]}
             </p>

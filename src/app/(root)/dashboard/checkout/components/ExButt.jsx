@@ -22,11 +22,7 @@ export default function ExButt({ user, lang, paramslang }) {
         },
         body: JSON.stringify({ items, user: user, address, lang }),
       });
-      // console.log(response);
-      // const data = await response.json();
-      // console.log(data.property.email);
-      // const primerCorreo = data.property.email.split(",")[0].trim();
-      // console.log(primerCorreo);
+
       if (response.ok) {
         const data = await response.json();
         // Redirigir a la página de agradecimiento

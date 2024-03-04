@@ -67,7 +67,7 @@ export default function CheckoutPage({ params }) {
         <div>
           <div className="flex justify-center mb-4">
             <Link
-              href={`/dashboard/direccion`}
+              href={`/dashboard/checkout`}
               className="w-full text-white bg-primaryBlue font-bold rounded-lg text-md px-5 py-2.5 text-center"
             >
               {lang["es"]["select-address"]}
