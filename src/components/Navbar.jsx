@@ -31,7 +31,7 @@ export default function Navbar({ lang, paramslang }) {
   async function logout() {
     await removeAll();
     signOut({ redirect: false }).then(() => {
-      window.location.href = "https://web2printxcaret.gruporegio.mx/";
+      window.location.href = "https://web2printssiento.gruporegio.mx/";
     });
     // signOut({
     //   callbackUrl: "https://web2print.gruporegio.mx/",
