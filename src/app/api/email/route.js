@@ -354,10 +354,10 @@ function generateEmailContent(
   // item.address.price != 0 ?
   // content += ${items.address.price != 0}
 
-  content +=
-    items.address.price != 0
-      ? `<tr><td style='padding:2px 10px;border: solid 1px;'></td><td style='padding:2px 10px;border: solid 1px;'>Envio</td><td style='padding:2px 10px;border: solid 1px;'></td><td style='padding:2px 10px;border: solid 1px;'></td><td style='padding:2px 10px;border: solid 1px;'></td><td style='padding:2px 10px;border: solid 1px;'>$${items.address.price}</td></tr>`
-      : "";
+  // content +=
+  //   items.address.price != 0
+  //     ? `<tr><td style='padding:2px 10px;border: solid 1px;'></td><td style='padding:2px 10px;border: solid 1px;'>Envio</td><td style='padding:2px 10px;border: solid 1px;'></td><td style='padding:2px 10px;border: solid 1px;'></td><td style='padding:2px 10px;border: solid 1px;'></td><td style='padding:2px 10px;border: solid 1px;'>$${items.address.price}</td></tr>`
+  //     : "";
 
   content += `</tbody></table><br />
     <br />`;
